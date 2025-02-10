@@ -91,7 +91,7 @@ Actor.destroy_all
 
 # Adding studios to Studios table
 studio = Studio.new
-studio["studio_name"] = "Warner Bros"
+studio["studio_name"] = "Warner Bros."
 studio.save
 
 # Adding actors to Actor table
@@ -116,7 +116,7 @@ for name in actor_names
 end
 
 # Query to find the studio row in the Studios table
-warner_bros = Studio.find_by({ "name" => "Warner Bros." })
+warner_bros = Studio.find_by({ "studio_name" => "Warner Bros." })
 
 # Adding movies to the Movies table
 movie = Movie.new
@@ -200,7 +200,7 @@ for movie in movies
   # Query to find the studio related to the movie
   studio = Studio.find_by({ "id" => movie["studio_id"] })
     # Print movie details
-    puts "#{movie["title"]} #{movie["year_released"]} #{movie["mpaa_rating"]} #{studio["name"]}"
+    puts "#{movie["title"]} #{movie["year_released"]} #{movie["mpaa_rating"]} #{studio["studio_name"]}"
 end
 
 # Prints a header for the cast output
@@ -208,6 +208,9 @@ puts ""
 puts "Top Cast"
 puts "========"
 puts ""
+
+# Query the cast data and loop through the results to display the cast output for each movie.
+# TODO!
 
 # Loop through all movies
 for movie in movies
@@ -222,6 +225,3 @@ for movie in movies
       puts "#{movie["title"]} #{actor["actor_name"]} #{role["role_name"]}"
     end
   end
-
-# Query the cast data and loop through the results to display the cast output for each movie.
-# TODO!
