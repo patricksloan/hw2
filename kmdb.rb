@@ -140,7 +140,7 @@ movie["mpaa_rating"] = "PG-13"
 movie["studio_id"] = warner_bros["id"]
 movie.save
 
-# lol recognize it would have been more effcient to add movies 
+# lol recognize it would have been more effcient to add movies via loop method
 
 # Query movie rows from the Movies table
 batman_begins = Movie.find_by({ "title" => "Batman Begins" })
